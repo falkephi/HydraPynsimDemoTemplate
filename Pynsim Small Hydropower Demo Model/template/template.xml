@@ -1,0 +1,321 @@
+<?xml version="1.0"?>
+<template_definition>
+<template_name>Pynsim Small Hydropower Demo Model</template_name>
+<layout>
+  <item>
+    <name>grouping</name>
+    <value>
+      <name>Pynsim Small Hydropower Model</name>
+      <description>A Hydra template for the pynsim demo model for small hydropower site selection</description>
+      <categories>
+        <category>
+          <name>NODE</name>
+          <description>Nodes</description>
+          <displayname>Nodes</displayname>
+          <groups>
+            <group>
+              <name>IntakeNode</name>
+              <description>Intake Node</description>
+              <displayname>Intake Node</displayname>
+              <image>images\intake.png</image>
+            </group>
+            <group>
+              <name>PowerHouse</name>
+              <description>Power House</description>
+              <displayname>Power House</displayname>
+              <image>images\powerplant.png</image>
+            </group>
+            <group>
+              <name>RiverNode</name>
+              <description>River Node</description>
+              <displayname>River Node</displayname>
+              <image>images\junction.png</image>
+            </group>
+          </groups>
+        </category>
+        <category>
+          <name>LINK</name>
+          <description>Links</description>
+          <displayname>Links</displayname>
+          <groups>
+            <group>
+              <name>Pipe</name>
+              <description>Pipe</description>
+              <displayname>Pipe</displayname>
+              <image/>
+            </group>
+            <group>
+              <name>River</name>
+              <description>River</description>
+              <displayname>River</displayname>
+              <image/>
+            </group>
+          </groups>
+        </category>
+      </categories>
+    </value>
+  </item>
+</layout>
+<resources>
+  <resource>
+    <type>NODE</type>
+    <name>IntakeNode</name>
+    <layout>
+      <item>
+        <name>group</name>
+        <value>IntakeNode</value>
+      </item>
+    </layout>
+    <attribute>
+      <name>abstraction</name>
+      <dimension>Volumetric flow rate</dimension>
+      <unit>m^3 s^-1</unit>
+      <is_var>Y</is_var>
+      <data_type>scalar</data_type>
+    </attribute>
+    <attribute>
+      <name>max_abstraction</name>
+      <dimension>Volumetric flow rate</dimension>
+      <unit>m^3 s^-1</unit>
+      <is_var>N</is_var>
+      <data_type>scalar</data_type>
+    </attribute>
+    <attribute>
+      <name>dQdx</name>
+      <dimension>Volumetric flow rate</dimension>
+      <unit>m^3 s^-1</unit>
+      <is_var>N</is_var>
+      <data_type>scalar</data_type>
+    </attribute>
+    <attribute>
+      <name>h</name>
+      <dimension>Length</dimension>
+      <unit>m</unit>
+      <is_var>N</is_var>
+      <data_type>scalar</data_type>
+    </attribute>
+    <attribute>
+      <name>Q_nat</name>
+      <dimension>Volumetric flow rate</dimension>
+      <unit>m^3 s^-1</unit>
+      <is_var>N</is_var>
+      <data_type>scalar</data_type>
+    </attribute>
+    <attribute>
+      <name>Q</name>
+      <dimension>Volumetric flow rate</dimension>
+      <unit>m^3 s^-1</unit>
+      <is_var>Y</is_var>
+      <data_type>scalar</data_type>
+    </attribute>
+    <attribute>
+      <name>e_flows</name>
+      <dimension>Volumetric flow rate</dimension>
+      <unit>m^3 s^-1</unit>
+      <is_var>N</is_var>
+      <data_type>scalar</data_type>
+    </attribute>
+  </resource>
+  <resource>
+    <type>NODE</type>
+    <name>PowerHouse</name>
+    <layout>
+      <item>
+        <name>group</name>
+        <value>PowerHouse</value>
+      </item>
+    </layout>
+    <attribute>
+      <name>head</name>
+      <dimension>Length</dimension>
+      <unit>m</unit>
+      <is_var>N</is_var>
+      <data_type>scalar</data_type>
+    </attribute>
+    <attribute>
+      <name>capacity</name>
+      <dimension>Power</dimension>
+      <unit>W</unit>
+      <is_var>N</is_var>
+      <data_type>scalar</data_type>
+    </attribute>
+    <attribute>
+      <name>design_flow</name>
+      <dimension>Volumetric flow rate</dimension>
+      <unit>m^3 s^-1</unit>
+      <is_var>N</is_var>
+      <data_type>scalar</data_type>
+    </attribute>
+    <attribute>
+      <name>Q</name>
+      <dimension>Volumetric flow rate</dimension>
+      <unit>m^3 s^-1</unit>
+      <is_var>N</is_var>
+      <data_type>scalar</data_type>
+    </attribute>
+    <attribute>
+      <name>efficiency</name>
+      <dimension>dimensionless</dimension>
+      <is_var>N</is_var>
+      <data_type>scalar</data_type>
+    </attribute>
+    <attribute>
+      <name>power_production</name>
+      <dimension>Energy</dimension>
+      <unit>GWh</unit>
+      <is_var>N</is_var>
+      <data_type>scalar</data_type>
+    </attribute>
+  </resource>
+  <resource>
+    <type>NODE</type>
+    <name>RiverNode</name>
+    <layout>
+      <item>
+        <name>group</name>
+        <value>RiverNode</value>
+      </item>
+    </layout>
+    <attribute>
+      <name>Q</name>
+      <dimension>Volumetric flow rate</dimension>
+      <unit>m^3 s^-1</unit>
+      <is_var>N</is_var>
+      <data_type>scalar</data_type>
+    </attribute>
+    <attribute>
+      <name>h</name>
+      <dimension>Length</dimension>
+      <unit>m</unit>
+      <is_var>N</is_var>
+      <data_type>scalar</data_type>
+    </attribute>
+    <attribute>
+      <name>Q_nat</name>
+      <dimension>Volumetric flow rate</dimension>
+      <unit>m^3 s^-1</unit>
+      <is_var>N</is_var>
+      <data_type>scalar</data_type>
+    </attribute>
+    <attribute>
+      <name>dQdx</name>
+      <dimension>Volumetric flow rate</dimension>
+      <unit>m^3 s^-1</unit>
+      <is_var>N</is_var>
+      <data_type>scalar</data_type>
+    </attribute>
+  </resource>
+  <resource>
+    <type>GROUP</type>
+    <name>SmallHydroOperator</name>
+    <attribute>
+      <name>active</name>
+      <dimension>dimensionless</dimension>
+      <is_var>N</is_var>
+      <data_type>scalar</data_type>
+    </attribute>
+    <attribute>
+      <name>investment_cost</name>
+      <dimension>Monetary value</dimension>
+      <unit>USD</unit>
+      <is_var>N</is_var>
+      <data_type>scalar</data_type>
+    </attribute>
+    <attribute>
+      <name>penstock_length</name>
+      <dimension>Length</dimension>
+      <unit>m</unit>
+      <is_var>N</is_var>
+      <data_type>scalar</data_type>
+    </attribute>
+    <attribute>
+      <name>existing</name>
+      <dimension>dimensionless</dimension>
+      <is_var>N</is_var>
+      <data_type>scalar</data_type>
+    </attribute>
+  </resource>
+  <resource>
+    <type>LINK</type>
+    <name>Pipe</name>
+    <layout>
+      <item>
+        <name>group</name>
+        <value>Pipe</value>
+      </item>
+      <item>
+        <name>colour</name>
+        <value>black</value>
+      </item>
+      <item>
+        <name>symbol</name>
+        <value>solid</value>
+      </item>
+      <item>
+        <name>line_weight</name>
+        <value>1</value>
+      </item>
+    </layout>
+  </resource>
+  <resource>
+    <type>LINK</type>
+    <name>River</name>
+    <layout>
+      <item>
+        <name>group</name>
+        <value>River</value>
+      </item>
+      <item>
+        <name>colour</name>
+        <value>blue</value>
+      </item>
+      <item>
+        <name>symbol</name>
+        <value>solid</value>
+      </item>
+      <item>
+        <name>line_weight</name>
+        <value>1</value>
+      </item>
+    </layout>
+    <attribute>
+      <name>length</name>
+      <dimension>Length</dimension>
+      <unit>m</unit>
+      <is_var>N</is_var>
+      <data_type>scalar</data_type>
+    </attribute>
+  </resource>
+  <resource>
+    <type>NETWORK</type>
+    <name>SmallHydroNetwork</name>
+    <attribute>
+      <name>total_electricity_production</name>
+      <dimension>Energy</dimension>
+      <unit>GWh</unit>
+      <is_var>N</is_var>
+      <data_type>scalar</data_type>
+    </attribute>
+    <attribute>
+      <name>total_investment_cost</name>
+      <dimension>Monetary value</dimension>
+      <unit>USD</unit>
+      <is_var>N</is_var>
+      <data_type>scalar</data_type>
+    </attribute>
+    <attribute>
+      <name>aggregated_flow_deficit</name>
+      <dimension>Volumetric flow rate</dimension>
+      <unit>m^3 s^-1</unit>
+      <is_var>N</is_var>
+      <data_type>scalar</data_type>
+    </attribute>
+    <attribute>
+      <name>connectivity_indicator</name>
+      <dimension>dimensionless</dimension>
+      <is_var>N</is_var>
+      <data_type>scalar</data_type>
+    </attribute>
+  </resource>
+</resources>
+</template_definition>

@@ -5,7 +5,7 @@
   <item>
     <name>grouping</name>
     <value>
-      <name>Pynsim Small Hydropower Model</name>
+      <name>Pynsim Small Hydropower Demo Model</name>
       <description>A Hydra template for the pynsim demo model for small hydropower site selection</description>
       <categories>
         <category>
@@ -64,6 +64,10 @@
       <item>
         <name>group</name>
         <value>IntakeNode</value>
+      </item>
+      <item>
+          <name>image</name>
+          <value>images\intake.png</value>
       </item>
     </layout>
     <attribute>
@@ -124,6 +128,10 @@
         <name>group</name>
         <value>PowerHouse</value>
       </item>
+      <item>
+          <name>image</name>
+          <value>images\powerplant.png</value>
+      </item>
     </layout>
     <attribute>
       <name>head</name>
@@ -174,6 +182,10 @@
       <item>
         <name>group</name>
         <value>RiverNode</value>
+      </item>
+      <item>
+          <name>image</name>
+          <value>images\junction.png</value>
       </item>
     </layout>
     <attribute>
